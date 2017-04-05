@@ -21,7 +21,7 @@ public class RemoteClient {
 
     public static void main(String[] args) throws Exception {
         // 您看，这里使用的是java名称服务技术进行的RMI接口查找。
-        RemoteServiceInterface remoteServiceInterface = (RemoteServiceInterface)Naming.lookup("rmi://192.168.61.1/queryAllUserinfo");
+        RemoteServiceInterface remoteServiceInterface = (RemoteServiceInterface)Naming.lookup("rmi://127.0.0.1:1099/queryAllUserinfo");
         List<UserInfo> users = remoteServiceInterface.queryAllUserinfo();
 
         RemoteClient.LOGGER.info("users.size() = " +users.size());
